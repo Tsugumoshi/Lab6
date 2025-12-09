@@ -31,7 +31,11 @@ def main():
             print("Выход из программы...")
             break
         elif choice == '1':
-            print("Функционал ввода A будет реализован позже")
+             try:
+                 a = float(input("Введите число A: "))
+                 print(f"Число A успешно установлено: {a}")
+            except ValueError:
+                print("Ошибка! Введите числовое значение.")
         elif choice == '2':
             print("Функционал ввода B будет реализован позже")
         elif choice == '3':
