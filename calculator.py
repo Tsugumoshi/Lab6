@@ -3,51 +3,93 @@
 Лабораторная работа по Git
 """
 
+def add_numbers(x, y):
+    """Сложение двух чисел"""
+    if x is None or y is None:
+        print("Ошибка: сначала введите оба числа!")
+        return None
+    return x + y
+
+def subtract_numbers(x, y):
+    """Вычитание двух чисел"""
+    if x is None or y is None:
+        print("Ошибка: сначала введите оба числа!")
+        return None
+    return x - y
+
+def multiply_numbers(x, y):
+    """Умножение двух чисел"""
+    if x is None or y is None:
+        print("Ошибка: сначала введите оба числа!")
+        return None
+    return x * y
+
+def divide_numbers(x, y):
+    """Деление двух чисел"""
+    if x is None or y is None:
+        print("Ошибка: сначала введите оба числа!")
+        return None
+    if y == 0:
+        print("Ошибка: деление на ноль!")
+        return None
+    return x / y
+
 def display_menu():
     """Отображение меню"""
-    print("\n" + "="40)
+    print("\n" + "="*40)
     print("К А Л Ь К У Л Я Т О Р")
-    print("="40)
+    print("="*40)
     print("1. Ввести число A")
     print("2. Ввести число B")
     print("3. Выполнить операцию '+'")
     print("4. Выполнить операцию '-'")
-    print("5. Выполнить операцию ''")
+    print("5. Выполнить операцию '*'")
     print("6. Выполнить операцию '/'")
     print("7. Показать текущие значения")
     print("0. Выход")
-    print("="40)
+    print("="*40)
 
 def main():
     """Основная функция программы"""
     a = None
     b = None
-
+    
     while True:
         display_menu()
         choice = input("Выберите пункт меню (0-7): ").strip()
-
+        
         if choice == '0':
             print("Выход из программы...")
             break
         elif choice == '1':
             print("Функционал ввода A будет реализован позже")
         elif choice == '2':
-            print("Функционал ввода B будет реализован позже")
+            try:
+                b = float(input("Введите число B: "))
+                print(f"Число B успешно установлено: {b}")
+            except ValueError:
+                print("Ошибка! Введите числовое значение.")
         elif choice == '3':
-            print("Функционал сложения будет реализован позже")
+            result = add_numbers(a, b)
+            if result is not None:
+                print(f"Результат сложения: {a} + {b} = {result}")
         elif choice == '4':
-            print("Функционал вычитания будет реализован позже")
+            result = subtract_numbers(a, b)
+            if result is not None:
+                print(f"Результат вычитания: {a} - {b} = {result}")
         elif choice == '5':
-            print("Функционал умножения будет реализован позже")
+            result = multiply_numbers(a, b)
+            if result is not None:
+                print(f"Результат умножения: {a} * {b} = {result}")
         elif choice == '6':
-            print("Функционал деления будет реализован позже")
+            result = divide_numbers(a, b)
+            if result is not None:
+                print(f"Результат деления: {a} / {b} = {result}")
         elif choice == '7':
             print(f"Текущие значения: A = {a}, B = {b}")
         else:
             print("Неверный выбор. Попробуйте снова.")
-
     print("Программа завершена.")
 
-if name == "main":
+if __name__ == "__main__":
     main()
