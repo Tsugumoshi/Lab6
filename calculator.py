@@ -33,20 +33,31 @@ def main():
         elif choice == '1':
             print("Функционал ввода A будет реализован позже")
         elif choice == '2':
-            print("Функционал ввода B будет реализован позже")
+            try:
+                b = float(input("Введите число B: "))
+                print(f"Число B успешно установлено: {b}")
+            except ValueError:
+                print("Ошибка! Введите числовое значение.")
         elif choice == '3':
-            print("Функционал сложения будет реализован позже")
+            result = add_numbers(a, b)
+            if result is not None:
+                print(f"Результат сложения: {a} + {b} = {result}")
         elif choice == '4':
-            print("Функционал вычитания будет реализован позже")
+            result = subtract_numbers(a, b)
+            if result is not None:
+                print(f"Результат вычитания: {a} - {b} = {result}")
         elif choice == '5':
-            print("Функционал умножения будет реализован позже")
+            result = multiply_numbers(a, b)
+            if result is not None:
+                print(f"Результат умножения: {a} * {b} = {result}")
         elif choice == '6':
-            print("Функционал деления будет реализован позже")
+            result = divide_numbers(a, b)
+            if result is not None:
+                print(f"Результат деления: {a} / {b} = {result}")
         elif choice == '7':
             print(f"Текущие значения: A = {a}, B = {b}")
         else:
             print("Неверный выбор. Попробуйте снова.")
-
     print("Программа завершена.")
 
 if name == "main":
