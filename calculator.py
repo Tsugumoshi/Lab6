@@ -37,7 +37,11 @@ def main():
             except ValueError:
                 print("Ошибка! Введите числовое значение.")
         elif choice == '2':
-            print("Функционал ввода B будет реализован позже")
+            try:
+                b = float(input("Введите число B: "))
+                print(f"Число B успешно установлено: {b}")
+            except ValueError:
+                print("Ошибка! Введите числовое значение.")
         elif choice == '3':
             print("Функционал сложения будет реализован позже")
         elif choice == '4':
